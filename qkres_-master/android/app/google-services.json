@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1047458726556",
+    "firebase_url": "https://qkres-application.firebaseio.com",
+    "project_id": "qkres-application",
+    "storage_bucket": "qkres-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1047458726556:android:40dce9f40e0064df98a359",
+        "android_client_info": {
+          "package_name": "com.qkres.qkres_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1047458726556-m7avq5lueomg9b92vsskbaborfuvrl8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrybgvT3uWumKFIkEy6QuWptMkQDc1LKk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1047458726556-m7avq5lueomg9b92vsskbaborfuvrl8i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

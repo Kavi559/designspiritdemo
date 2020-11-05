@@ -1,0 +1,77 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/tabPage-provider.dart';
+
+class Categories extends StatefulWidget {
+  @override
+  _CategoriesState createState() => _CategoriesState();
+}
+
+class _CategoriesState extends State<Categories> {
+  List<String> categories = [
+    "About Us",
+    "Facilities and Services",
+    "Material Resources",
+    "Business Oppurtunities"
+  ];
+
+  var _isInit = true;
+  int selectedIndex;
+  @override
+  void didChangeDependencies() {
+    if (_isInit) {
+      selectedIndex = Provider.of<TabPageProvider>(context).index;
+    }
+    _isInit = false;
+    super.didChangeDependencies();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: SizedBox(
+        height: 25,
+        child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: categories.length,
+            itemBuilder: (context, index) => buildCategory(index)),
+      ),
+    );
+  }
+
+  Widget buildCategory(int index) => GestureDetector(
+        onTap: () {
+          Provider.of<TabPageProvider>(context, listen: false).setIndex(index);
+          setState(() {
+            selectedIndex = index;
+          });
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          child: Column(
+            children: [
+              Text(
+                categories[index],
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: selectedIndex == index
+                      ? Colors.grey[800]
+                      : Colors.grey[500],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 5),
+                height: 2,
+                width: 35,
+                color: selectedIndex == index
+                    ? Colors.grey[700]
+                    : Colors.transparent,
+              )
+            ],
+          ),
+        ),
+      );
+}
